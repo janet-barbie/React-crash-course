@@ -14,8 +14,8 @@ function App() {
  
 return(
  <>
- {/* <Counter/> */}
-<ColorPicker/>
+ <Counter/>
+
  </>
   
 )
