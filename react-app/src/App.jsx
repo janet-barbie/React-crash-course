@@ -10,12 +10,12 @@ import ProfilePicture from './ProfilePicture.jsx'
 import MyComponent from './MyComponent.jsx'
 import Counter from './Counter.jsx'
 import ColorPicker from './ColorPicker.jsx'
+import TodoList from './TodoList.jsx'
 function App() {
  
 return(
  <>
-<MyComponent/>
-
+<TodoList/>
  </>
   
 )
