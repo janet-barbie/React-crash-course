@@ -1,50 +1,28 @@
-import React, {useState} from 'react';
+import React,{useState,useEffect} from "react";
 
 function MyComponent(){
-    const [cars,setCars] = useState([])
-    const [carYear,setCarYear] = useState(new Date().getFullYear())
-    const [carMake,setCarMake] = useState("")
-    const [carModel,setCarModel] = useState("")
+    const [count,setCount] = useState(0);
+    const [color,setColor] = useState("green")
+    useEffect(()=>{
+        document.title = `Count: ${count} ${color}`
+    },[count,color])
 
-    function handleAddCar(){
-        const newCar ={
-            year: carYear,
-            make: carMake,
-            model: carModel
-        }
-        setCars(c=>[...c,newCar]);
-        setCarYear(new Date().getFullYear())
-        setCarMake("")
-        setCarModel("")
-
+    function addCount(){
+        setCount(c => c + 1);
     }
-    function handleRemoveCar(index){
-        setCars(c=>c.filter((_,i)=>i !== index ))
-
+    function subtractCount(){
+        setCount( c => c - 1);
     }
-    function handleYearChange(event){
-        setCarYear(event.target.value)
-
+    function changeColor(){
+        setColor(c => c === "green" ? "red":"green")
     }
-    function handleMakeChange(){
-        setCarMake(event.target.value)
-    }
-    function handleModelChange(event){
-        setCarModel(event.target.value)
+    return(<>
+    <p style={{color:color}}>Count: {count}</p>
+    <button onClick={addCount}>Add</button>
+    <button onClick={subtractCount}>Subtract</button><br/>
+    <button onClick={changeColor}>Change Color</button>
+     
+    </>)
 
-    }
-
-    return(<div>
-        <h2>List of Car Objects</h2>
-        <ul>
-         {cars.map((car,index)=> 
-         <li key={index} onClick={()=> handleRemoveCar(index)}>
-            {car.year} {car.make} {car.model}</li>)}
-        </ul>
-        <input type="number" value={carYear} onChange={handleYearChange} /><br/>
-        <input type="text" value={carMake} onChange={handleMakeChange} placeholder='Enter car make' /><br/>
-        <input type="text" value={carModel} onChange={handleModelChange} placeholder='Enter car model' /><br/>
-        <button onClick={handleAddCar}>Add Car</button>
-    </div>)
 }
-export default MyComponent
+export default MyComponent;

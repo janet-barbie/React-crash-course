@@ -1,6 +1,4 @@
-body{
-   background-color: hsl(0,0%,10%);
-}
+
 .card{
     border: 1px solid hsl(0,0%,80%);
     border-radius: 10px;
@@ -146,7 +144,7 @@ h1{
    font-size: 4rem;
    color: white;
 }
-button{
+/* button{
    font-size: 1.7rem;
    font-weight: bold;
    padding: 10px 20px;
@@ -156,8 +154,9 @@ button{
    cursor: pointer;
    transition:  background-color 0.5s ease;
 
-}
-.add-button{
+} */
+
+.add-button{ 
    background-color: hsl(125,47%,54%);
 }
 .add-button:hover{
