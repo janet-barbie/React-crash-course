@@ -17,7 +17,7 @@ function App() {
  
 return(
  <>
-<ComponentA/>
+<MyComponent/>
  </>
   
 )
