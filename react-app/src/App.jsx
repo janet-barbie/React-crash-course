@@ -12,11 +12,12 @@ import Counter from './Counter.jsx'
 import ColorPicker from './ColorPicker.jsx'
 import TodoList from './TodoList.jsx'
 import DigitalClock from './DigitalClock.jsx'
+import ComponentA from './ComponentA.jsx'
 function App() {
  
 return(
  <>
-<DigitalClock/>
+<ComponentA/>
  </>
   
 )
